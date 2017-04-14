@@ -1,0 +1,85 @@
+{% load staticfiles %}
+<html>
+<head>
+	<title>{% block head_title %}Imperfections Resonated| Soumya chopra {% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+	<style type="text/css">
+	{% block style %} {% endblock %}
+	</style>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+	{% include 'carousel.html' %}
+	{% include 'message_display.html' %} 
+
+	<div class="container">
+		{% block content %}
+		{% endblock %}
+	</div>
+	<footer class="footer">
+                <div class="footer-meta">
+                    <div class="container text-center">
+                        <div class="clearfix">
+                            <ul class="social-line list-inline">
+                                <li data-animation="flipInY" data-animation-delay="100"><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li data-animation="flipInY" data-animation-delay="300"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li data-animation="flipInY" data-animation-delay="500"><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+                                
+                            </div>
+                            <span class="copyright" data-animation="fadeInUp" data-animation-delay="100">2017&copy;  &#8212; Blog maintained by Gaurav Shrestha</span>
+                        </div>
+                    </div>
+            </footer>
+            <!-- /FOOTER -->
+            <div class="to-top">
+                <center><img src="{% static 'img/up.png' %}"></center>
+            </div>
+	<script src="{% static 'js/bootstrap.min.js' %}" ></script>
+ <script src="{% static 'js/main.js' %}"></script>
+  <script type="text/javascript">
+        jQuery(document).ready(function() {
+            theme.init();
+           
+        });
+        jQuery(window).load(function() {
+            jQuery('body').scrollspy({
+                offset: 100,
+                target: '.navigation'
+            });
+        });
+        jQuery(window).load(function() {
+            jQuery('body').scrollspy('refresh');
+        });
+        jQuery(window).resize(function() {
+            jQuery('body').scrollspy('refresh');
+        });
+
+        jQuery(document).ready(function() {
+            theme.onResize();
+        });
+        jQuery(window).load(function() {
+            theme.onResize();
+        });
+        jQuery(window).resize(function() {
+            theme.onResize();
+        });
+
+        
+        </script>
+</body>
+</html>
